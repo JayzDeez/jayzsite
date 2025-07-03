@@ -10,48 +10,26 @@ body {
 }
 
 .container {
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid #333;
-  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
-a {
+.terminal {
+  max-width: 600px;
+  white-space: pre-wrap;
+}
+
+.flower {
   color: #FFA500;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: #FFCC00;
+  white-space: pre;
+  font-size: 0.9rem;
 }
 
 nav {
   margin-top: 2rem;
   font-size: 0.9rem;
-}
-
-.label {
-  font-weight: bold;
-  color: #FFA500;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #333;
-  margin: 2rem 0;
-}
-
-.entry {
-  margin-bottom: 2rem;
-  border: 1px solid #333;
-  padding: 1rem;
-}
-
-.entry h2 {
-  margin-top: 0;
 }
 
 .inline-link::before {
