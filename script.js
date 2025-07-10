@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const lines = [
+  const bootLines = [
     "> booting jayzsite...",
     "> status: stable",
     "> last updated: 10-07-2025",
@@ -23,39 +23,37 @@ document.addEventListener("DOMContentLoaded", () => {
     "Boy turn that Clario on and go grab yourself a matcha."
   ];
 
+  const runLinks = [
+    `<a class="inline-link" href="journal.html">run /journal</a>`,
+    `<a class="inline-link" href="about.html">run /about</a>`
+  ];
+
   const terminal = document.getElementById("terminal");
-  const quoteDisplay = document.getElementById("quote");
 
   let i = 0;
 
-  function showLine() {
-    if (i < lines.length) {
-      terminal.innerHTML += lines[i] + "<br/>";
+  function showBootLines() {
+    if (i < bootLines.length) {
+      terminal.innerHTML += bootLines[i] + "<br/>";
       i++;
-      setTimeout(showLine, 500);
+      setTimeout(showBootLines, 500);
     } else {
-      showQuote();
+      setTimeout(showQuote, 500);
     }
   }
 
   function showQuote() {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    quoteDisplay.textContent = quote;
-
-    // After showing the quote, show the clickable run commands:
-    showRunCommands();
+    terminal.innerHTML += quote + "<br/>";
+    setTimeout(() => showRunLink(0), 800);
   }
 
-  function showRunCommands() {
-    const runCommands = [
-      `<a class="inline-link" href="journal.html">run /journal</a>`,
-      `<a class="inline-link" href="about.html">run /about</a>`
-    ];
-
-    runCommands.forEach(cmd => {
-      terminal.innerHTML += cmd + "<br/>";
-    });
+  function showRunLink(index) {
+    if (index < runLinks.length) {
+      terminal.innerHTML += runLinks[index] + "<br/>";
+      setTimeout(() => showRunLink(index + 1), 500);
+    }
   }
 
-  showLine();
+  showBootLines();
 });
