@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "Welcome! I’m glad you’re here—mostly because it means the site is still up.",
     "Fuelled by delusions.",
     "Welcome back to the sleep deprived podcast."
+    "Boy turn that Clairo off and go grab yourself a beer."
+    "Boy turn that Clario on and go grab yourself a matcha."
   ];
 
   const terminal = document.getElementById("terminal");
