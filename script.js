@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lines = [
     "> booting jayzsite...",
     "> status: stable",
-    "> last updated: 03-07-2025",
+    "> last updated: 10-07-2025",
     "> welcome, guest user\n"
   ];
 
