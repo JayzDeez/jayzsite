@@ -38,13 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
       i++;
       setTimeout(showBootLines, 500);
     } else {
+      terminal.innerHTML += "<br/>"; // spacer after last boot line
       setTimeout(showQuote, 500);
     }
   }
 
   function showQuote() {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    terminal.innerHTML += quote + "<br/>";
+    terminal.innerHTML += quote + "<br/><br/>";
     setTimeout(() => showRunLink(0), 800);
   }
 
