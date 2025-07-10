@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "> last updated: 03-07-2025",
     "> welcome, guest user\n"
   ];
+
   const quotes = [
     "Bear with me — I don’t really understand how any of this is working.",
     "Not much here, but it’s mine.",
@@ -20,14 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "Fuelled by delusions.",
     "Welcome back to the sleep deprived podcast."
   ];
-  const flowerOptions = [
-    "      @@@\n   @@@@@@@@\n  @@ @@@@ @@\n   @@@@@@@@\n      @@@\n      ||\n      ||",
-    "   ❁   \n  ❁❁❁  \n ❁❁❁❁❁ \n  ❁❁❁  \n   ❁   ",
-    "   ✿\n ✿✿✿\n✿✿✿✿✿\n ✿✿✿\n   ✿"
-  ];
+
   const terminal = document.getElementById("terminal");
-  const flower = document.getElementById("flower");
   const quoteDisplay = document.getElementById("quote");
+
   let i = 0;
   function showLine() {
     if (i < lines.length) {
@@ -37,9 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       const quote = quotes[Math.floor(Math.random() * quotes.length)];
       quoteDisplay.textContent = "\n" + quote;
-      const flowerArt = flowerOptions[Math.floor(Math.random() * flowerOptions.length)];
-      flower.textContent = flowerArt;
     }
   }
+
   showLine();
 });
