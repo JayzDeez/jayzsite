@@ -3,10 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "> booting jayzsite...",
     "> status: stable",
     "> last updated: 10-07-2025",
-    "> welcome, guest user",
-    "",
-    `<a class="inline-link" href="journal.html">run /journal</a>`,
-    `<a class="inline-link" href="about.html">run /about</a>`
+    "> welcome, guest user"
   ];
 
   const quotes = [
@@ -30,15 +27,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const quoteDisplay = document.getElementById("quote");
 
   let i = 0;
+
   function showLine() {
     if (i < lines.length) {
       terminal.innerHTML += lines[i] + "<br/>";
       i++;
       setTimeout(showLine, 500);
     } else {
-      const quote = quotes[Math.floor(Math.random() * quotes.length)];
-      quoteDisplay.textContent = "\n" + quote;
+      showQuote();
     }
+  }
+
+  function showQuote() {
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteDisplay.textContent = quote;
+
+    // After showing the quote, show the clickable run commands:
+    showRunCommands();
+  }
+
+  function showRunCommands() {
+    const runCommands = [
+      `<a class="inline-link" href="journal.html">run /journal</a>`,
+      `<a class="inline-link" href="about.html">run /about</a>`
+    ];
+
+    runCommands.forEach(cmd => {
+      terminal.innerHTML += cmd + "<br/>";
+    });
   }
 
   showLine();
