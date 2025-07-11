@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (i < lines.length) {
       output.innerHTML += lines[i] + "<br/>";
       i++;
-      setTimeout(writeLine, 100);
+      setTimeout(writeLine, 250);
     }
   }
 
