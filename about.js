@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const lines = [
-    "> accessing about.txt...",
+    "> running /about...",
     "",
     "This little project started as boredom, but has slowly developed into something that I strangely care about. The concept of having a little slice of the internet being my thoughts and feelings is sort of surreal?",
     "",
