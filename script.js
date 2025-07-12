@@ -72,10 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showQuote() {
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    terminal.innerHTML += quote + "<br/><br/>";
-    setTimeout(() => showRunLink(0), 800);
-  }
+  const shuffled = quotes.sort(() => 0.5 - Math.random());
+  const selected = shuffled.slice(0, 2);
+
+  selected.forEach(q => {
+    terminal.innerHTML += q + "<br/>";
+  });
+
+  terminal.innerHTML += `<br/><a class="inline-link" href="">refresh for some more thoughts</a><br/><br/>`;
+
+  setTimeout(() => showRunLink(0), 800);
+}
+
 
   function showRunLink(index) {
     if (index < runLinks.length) {
