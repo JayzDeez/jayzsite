@@ -74,14 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function showQuote() {
   const shuffled = quotes.sort(() => 0.5 - Math.random());
   const selected = shuffled.slice(0, 2);
+  let q = 0;
 
-  selected.forEach(q => {
-    terminal.innerHTML += q + "<br/>";
-  });
+  function showNextQuote() {
+    if (q < selected.length) {
+      terminal.innerHTML += selected[q] + "<br/>";
+      q++;
+      setTimeout(showNextQuote, 500); 
+    } else {
+      terminal.innerHTML += `<span class="inline-link"><a href="">refresh for some more thoughts</a></span><br/><br/>`;
+      setTimeout(() => showRunLink(0), 800);
+    }
+  }
 
-  terminal.innerHTML += `<br/><a class="inline-link" href="">refresh for some more thoughts</a><br/><br/>`;
-
-  setTimeout(() => showRunLink(0), 800);
+  showNextQuote();
 }
 
 
