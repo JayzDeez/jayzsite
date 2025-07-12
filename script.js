@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const bootLines = [
     "> booting jayzsite...",
@@ -24,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const runLinks = [
-    `<a class="inline-link" href="journal.html">run /journal</a>`,
-    `<a class="inline-link" href="about.html">run /about</a>`
+    `<a class="inline-link" href="journal/journal.html">run /journal</a>`,
+    `<a class="inline-link" href="about/about.html">run /about</a>`
   ];
 
   const terminal = document.getElementById("terminal");
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       i++;
       setTimeout(showBootLines, 500);
     } else {
-      terminal.innerHTML += "<br/>"; // spacer after last boot line
+      terminal.innerHTML += "<br/>";
       setTimeout(showQuote, 500);
     }
   }
