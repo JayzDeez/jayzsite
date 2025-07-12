@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const ua = navigator.userAgent;
 
   const browserMap = [
+    { name: "Chrome (iOS)", pattern: /CriOS/i },
+    { name: "Firefox (iOS)", pattern: /FxiOS/i },
+    { name: "Edge (iOS)", pattern: /EdgiOS/i },
     { name: "Chrome", pattern: /Chrome/i, exclude: /Edg/i },
     { name: "Safari", pattern: /Safari/i, exclude: /Chrome/i },
     { name: "Firefox", pattern: /Firefox/i },
@@ -9,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const osMap = [
-    { name: "Windows", pattern: /Windows NT/i },
-    { name: "macOS", pattern: /Mac OS X/i },
     { name: "iOS", pattern: /iPhone|iPad|iPod/i },
     { name: "Android", pattern: /Android/i },
+    { name: "Windows", pattern: /Windows NT/i },
+    { name: "macOS", pattern: /Mac OS X/i },
     { name: "Linux", pattern: /Linux/i }
   ];
 
@@ -72,24 +75,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showQuote() {
-  const shuffled = quotes.sort(() => 0.5 - Math.random());
-  const selected = shuffled.slice(0, 2);
-  let q = 0;
+    const shuffled = quotes.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 2);
+    let q = 0;
 
-  function showNextQuote() {
-    if (q < selected.length) {
-      terminal.innerHTML += selected[q] + "<br/>";
-      q++;
-      setTimeout(showNextQuote, 500); 
-    } else {
-      terminal.innerHTML += `<span class="inline-link"><a href="">refresh for some more thoughts</a></span><br/><br/>`;
-      setTimeout(() => showRunLink(0), 800);
+    function showNextQuote() {
+      if (q < selected.length) {
+        terminal.innerHTML += selected[q] + "<br/>";
+        q++;
+        setTimeout(showNextQuote, 500);
+      } else {
+        terminal.innerHTML += `<span class="inline-link"><a href="">refresh for some more thoughts</a></span><br/><br/>`;
+        setTimeout(() => showRunLink(0), 800);
+      }
     }
+
+    showNextQuote();
   }
-
-  showNextQuote();
-}
-
 
   function showRunLink(index) {
     if (index < runLinks.length) {
