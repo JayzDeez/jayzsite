@@ -1,9 +1,37 @@
-
 document.addEventListener("DOMContentLoaded", () => {
+  const ua = navigator.userAgent;
+
+  const browserMap = [
+    { name: "Chrome", pattern: /Chrome/i, exclude: /Edg/i },
+    { name: "Safari", pattern: /Safari/i, exclude: /Chrome/i },
+    { name: "Firefox", pattern: /Firefox/i },
+    { name: "Edge", pattern: /Edg/i }
+  ];
+
+  const osMap = [
+    { name: "Windows", pattern: /Windows NT/i },
+    { name: "macOS", pattern: /Mac OS X/i },
+    { name: "iOS", pattern: /iPhone|iPad|iPod/i },
+    { name: "Android", pattern: /Android/i },
+    { name: "Linux", pattern: /Linux/i }
+  ];
+
+  const detect = (map) => {
+    const found = map.find(entry =>
+      entry.pattern.test(ua) && (!entry.exclude || !entry.exclude.test(ua))
+    );
+    return found ? found.name : null;
+  };
+
+  const browser = detect(browserMap);
+  const os = detect(osMap) || "Unknown";
+
   const bootLines = [
     "> booting jayzsite...",
     "> status: stable",
-    "> last updated: 10-07-2025",
+    ...(browser ? [`> browser: ${browser}`] : []),
+    `> operating system: ${os}`,
+    "> last updated: 12-07-2025",
     "> welcome, guest user"
   ];
 
@@ -30,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const terminal = document.getElementById("terminal");
-
   let i = 0;
 
   function showBootLines() {
