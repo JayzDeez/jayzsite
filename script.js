@@ -38,22 +38,44 @@ document.addEventListener("DOMContentLoaded", () => {
     "> welcome, guest user"
   ];
 
-  const quotes = [
-    "Bear with me — I don’t really understand how any of this is working.",
-    "Not much here, but it’s mine.",
-    "This site is mostly duct tape and instinct.",
-    "I wanted a quiet place to put things. This is it.",
-    "Welcome to my humble abode.",
-    "This site runs on 99% bugs and 1% magic.",
-    "Held together by hope, HTML, and a little bit of luck.",
-    "If you find a typo, no you didn’t.",
-    "Warning: May contain traces of broken links.",
-    "Welcome! I’m glad you’re here—mostly because it means the site is still up.",
-    "Fuelled by delusions.",
-    "Welcome back to the sleep deprived podcast.",
-    "Boy turn that Clairo off and go grab yourself a beer.",
-    "Boy turn that Clario on and go grab yourself a matcha."
-  ];
+ const quotes = [
+  "Bear with me — I don’t really understand how any of this is working.",
+  "Not much here, but it’s mine.",
+  "This site is mostly duct tape and instinct.",
+  "I wanted a quiet place to put things. This is it.",
+  "Welcome to my humble abode.",
+  "This site runs on 99% bugs and 1% magic.",
+  "Held together by hope, HTML, and a little bit of luck.",
+  "If you find a typo, no you didn’t.",
+  "Warning: May contain traces of broken links.",
+  "Welcome! I’m glad you’re here—mostly because it means the site is still up.",
+  "Fuelled by delusions.",
+  "Welcome back to the sleep deprived podcast.",
+  "Boy turn that Clairo off and go grab yourself a beer.",
+  "Boy turn that Clario on and go grab yourself a matcha.",
+  "War. War never changes.",
+  "The cake is a lie.",
+  "You Died.",
+  "Praise the sun.",
+  "Stay a while and listen.",
+  "I used to be an adventurer like you…",
+  "I know what you’ve done.",
+  "Reset the clock.",
+  "You shouldn’t be here.",
+  "This line intentionally left blank.",
+  "my name Jeff",
+  "Live, laugh, love",
+  "i am once again asking",
+  "now they’re after our souls",
+  "you are not the user",
+  "please do not tap the glass",
+  "one more reboot should fix it",
+  "hey u up? the site is",
+  "consider touching grass, or don’t",
+  "ran out of ideas. looping old ones.",
+  "I saw corps strip farmers of water ... and eventually of land.",
+  "It's never lupus"
+];
 
   const runLinks = [
     `<a class="inline-link" href="journal/journal.html">run /journal</a>`,
