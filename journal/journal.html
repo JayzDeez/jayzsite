@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Journal – JayzSite</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
-  <div class="container terminal" id="journal-log">
-    <p>> running /journal...</p>
-    <br>
-    <p><a class="inline-link" href="entry-test1.html">10-07-2025  [entry: TEST1]</a></p>
-    <p><a class="inline-link" href="entry-test2.html">08-07-2025  [entry: TEST2]</a></p>
-    <p><a class="inline-link" href="entry-test3.html">05-07-2025  [entry: TEST3]</a></p>
-    <br>
-    <p><a class="inline-link" href="../index.html">run /home</a></p>
-    <p><a class="inline-link" href="../about/about.html">run /about</a></p>
+  <div class="container">
+    <pre id="journal-output" class="terminal"></pre>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lines = [
+        "> running /journal...",
+        "", // 1st blank
+        "", // 2nd blank
+        `10-07-2025  [entry: <a class="inline-link" href="entry-test1.html">TEST1</a>]`,
+        "",
+        `08-07-2025  [entry: <a class="inline-link" href="entry-test2.html">TEST2</a>]`,
+        "",
+        `05-07-2025  [entry: <a class="inline-link" href="entry-test3.html">TEST3</a>]`,
+        "", // gap before nav
+        "", // second gap before nav
+        `<a class="inline-link" href="../index.html">run /home</a>`,
+        `<a class="inline-link" href="../about/about.html">run /about</a>`
+      ];
+
+      const output = document.getElementById("journal-output");
+      let i = 0;
+
+      function typeLine() {
+        if (i < lines.length) {
+          output.innerHTML += lines[i] + "<br/>";
+          i++;
+          setTimeout(typeLine, 300);
+        }
+      }
+
+      typeLine();
+    });
+  </script>
 </body>
 </html>
