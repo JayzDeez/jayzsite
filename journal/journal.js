@@ -15,19 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
       date: "10-07-2025",
       label: 'TEST3 – "No Thoughts"',
       summary: "introspection",
-      link: "/journal/test3.html"
+      link: "/journal/entry-test3.html"
     },
     {
       date: "08-07-2025",
       label: 'TEST2 – "Why Terminal Vibes Hit Different"',
       summary: "robots, AI, coding",
-      link: "/journal/test2.html"
+      link: "/journal/entry-test2.html"
     },
     {
       date: "05-07-2025",
       label: 'TEST1 – "Late Nights and Coffee"',
       summary: "caffeine, introspection, insomnia",
-      link: "/journal/test1.html"
+      link: "/journal/entry-test1.html"
     }
   ];
 
