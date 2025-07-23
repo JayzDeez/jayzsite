@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const terminal = document.getElementById("journal-terminal");
 
+  function generateGlitch(length = 6) {
+    const chars = "!@#£¥§%*";
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      result += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return result;
+  }
+
   const realEntries = [
     {
       date: "10-07-2025",
@@ -25,13 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const glitchEntries = [
     {
       date: "29-10-1929",
-      label: "TEST0 – \"corrupted\"",
+      label: 'TEST0 – "corrupted"',
       summary: ["journal entry corrupted.", "attempting recovery...", "fail."]
     },
     {
       date: "02-12-1984",
       label: "REDACTED",
-      summary: ["entry redacted", "last sync: [?@#£¥!] days ago"]
+      summary: () => [
+        "entry redacted",
+        `last sync: [${generateGlitch()}] days ago`
+      ]
     },
     {
       date: "19-10-1987",
@@ -73,16 +85,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const lines = ["> running /journal...", "> loading personal logs...", ""];
 
   for (const entry of combinedEntries) {
-    lines.push(`${entry.date}  [${
-      entry.link
-        ? `<a href="${entry.link}">${entry.label}</a>`
-        : entry.label || "???"
-    }]`);
-    if (Array.isArray(entry.summary)) {
-      lines.push(...entry.summary);
-    } else {
-      lines.push(`> summary: ${entry.summary}`);
-    }
+    const labelOutput = entry.link
+      ? `<a href="${entry.link}">${entry.label}</a>`
+      : entry.label || "???";
+
+    lines.push(`${entry.date}  [${labelOutput}]`);
+
+    const summaries = typeof entry.summary === "function"
+      ? entry.summary()
+      : Array.isArray(entry.summary)
+        ? entry.summary
+        : [`> summary: ${entry.summary}`];
+
+    lines.push(...summaries);
     lines.push(""); // one blank line between entries
   }
 
