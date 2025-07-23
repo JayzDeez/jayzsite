@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const shuffledGlitches = glitchEntries.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 2) + 1);
   const combinedEntries = [...realEntries, ...shuffledGlitches];
 
-  // Sort DESCENDING
+  // Sort 
   combinedEntries.sort((a, b) => {
     const [dayA, monthA, yearA] = a.date.split("-").map(Number);
     const [dayB, monthB, yearB] = b.date.split("-").map(Number);
@@ -98,12 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
         : [`> summary: ${entry.summary}`];
 
     lines.push(...summaries);
-    lines.push(""); // one blank line between entries
+    lines.push(""); 
   }
 
   lines.push("> logs complete.");
-  lines.push('<a class="inline-link" href="/index.html">run /home</a><br/><a class="inline-link" href="/about.html">run /about</a>');
-
+  lines.push('<a class="inline-link" href="/index.html">run /home</a><br/><a class="inline-link" href="/about/">run /about</a>');
   let i = 0;
 
   function typeLine() {
