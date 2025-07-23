@@ -1,111 +1,103 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const terminal = document.getElementById("journal-terminal");
+
   const realEntries = [
     {
       date: "10-07-2025",
-      label: '[TEST1 – "Late Nights and Coffee"]',
-      summary: "caffeine, introspection, insomnia"
+      label: 'TEST3 – "No Thoughts"',
+      summary: "introspection",
+      link: "/journal/test3.html"
     },
     {
       date: "08-07-2025",
-      label: '[TEST2 – "???"]',
-      summary: "robots, AI, coding"
+      label: 'TEST2 – "Why Terminal Vibes Hit Different"',
+      summary: "robots, AI, coding",
+      link: "/journal/test2.html"
     },
     {
       date: "05-07-2025",
-      label: '[TEST3 – "No Thoughts"]',
-      summary: "introspection"
+      label: 'TEST1 – "Late Nights and Coffee"',
+      summary: "caffeine, introspection, insomnia",
+      link: "/journal/test1.html"
     }
   ];
 
   const glitchEntries = [
     {
       date: "29-10-1929",
-      label: "[REDACTED]",
-      summary: "entry redacted\n> last sync: [GLITCH] days ago",
-      glitch: true
+      label: "TEST0 – \"corrupted\"",
+      summary: ["journal entry corrupted.", "attempting recovery...", "fail."]
     },
     {
       date: "02-12-1984",
-      label: "[ENTRY LOCKED]",
-      summary: "insufficient clearance level\n> access denied"
+      label: "REDACTED",
+      summary: ["entry redacted", "last sync: [?@#£¥!] days ago"]
     },
     {
       date: "19-10-1987",
-      label: '[TEST0 – "corrupted"]',
-      summary: "journal entry corrupted.\n> attempting recovery...\n> fail."
+      label: "ANOMALY DETECTED",
+      summary: ["log flagged for review"]
     },
     {
       date: "02-07-1997",
-      label: "[NULL]",
-      summary: "[this entry is no longer available]\n> error: file not found"
+      label: "NULL",
+      summary: ["[this entry is no longer available]", "error: file not found"]
     },
     {
       date: "02-12-2001",
-      label: "[]",
-      summary: "origin unknown\n> cannot verify author"
+      label: "",
+      summary: ["origin unknown", "cannot verify author"]
     },
     {
       date: "15-09-2008",
-      label: "[404]",
-      summary: "entry existed briefly\n> and then didn’t"
+      label: "404",
+      summary: ["entry existed briefly", "and then didn’t"]
     },
     {
       date: "20-04-2010",
-      label: "[ANOMALY DETECTED]",
-      summary: "log flagged for review"
-    },
-    {
-      date: "24-04-2013",
-      label: "[SYS_ERR_0x27]",
-      summary: "traceback overflow\n> system attempted reboot"
+      label: "ENTRY LOCKED",
+      summary: ["insufficient clearance level", "access denied"]
     }
   ];
 
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
+  const shuffledGlitches = glitchEntries.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 2) + 1);
+  const combinedEntries = [...realEntries, ...shuffledGlitches];
 
-  const terminal = document.getElementById("journal-terminal");
-  const glitchSymbols = ["!", "?", "#", "£", "¥", "@", "&", "$"];
+  // Sort DESCENDING
+  combinedEntries.sort((a, b) => {
+    const [dayA, monthA, yearA] = a.date.split("-").map(Number);
+    const [dayB, monthB, yearB] = b.date.split("-").map(Number);
+    return new Date(yearB, monthB - 1, dayB) - new Date(yearA, monthA - 1, dayA);
+  });
 
-  function glitchText(length = 6) {
-    return Array.from({length}, () => glitchSymbols[Math.floor(Math.random() * glitchSymbols.length)]).join("");
-  }
+  const lines = ["> running /journal...", "> loading personal logs...", ""];
 
-  let lines = [];
-  lines.push("> running /journal...");
-  lines.push("> loading personal logs...");
-  lines.push("");
-
-  const glitchesToShow = shuffle([...glitchEntries]).slice(0, 2);
-  const allEntries = shuffle([...realEntries, ...glitchesToShow]);
-
-  allEntries.forEach(entry => {
-    lines.push(`${entry.date}  ${entry.label}`);
-    if (entry.glitch) {
-      lines.push(`> ${entry.summary.replace("[GLITCH]", glitchText())}`);
+  for (const entry of combinedEntries) {
+    lines.push(`${entry.date}  [${
+      entry.link
+        ? `<a href="${entry.link}">${entry.label}</a>`
+        : entry.label || "???"
+    }]`);
+    if (Array.isArray(entry.summary)) {
+      lines.push(...entry.summary);
     } else {
       lines.push(`> summary: ${entry.summary}`);
     }
-    lines.push("");
-  });
+    lines.push(""); // one blank line between entries
+  }
 
   lines.push("> logs complete.");
-  lines.push("> run /home");
-  lines.push("> run /about");
+  lines.push('<a class="inline-link" href="/index.html">run /home</a><br/><a class="inline-link" href="/about.html">run /about</a>');
 
   let i = 0;
-  function typeLines() {
+
+  function typeLine() {
     if (i < lines.length) {
-      terminal.innerHTML += lines[i] + "\n";
+      terminal.innerHTML += lines[i] + "<br/>";
       i++;
-      setTimeout(typeLines, 300);
+      setTimeout(typeLine, 150);
     }
   }
 
-  typeLines();
+  typeLine();
 });
