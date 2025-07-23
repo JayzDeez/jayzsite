@@ -110,8 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (i < lines.length) {
       terminal.innerHTML += lines[i] + "<br/>";
       i++;
-      setTimeout(typeLine, 150);
-    }
+      setTimeout(typeLine, 250);    }
   }
 
   typeLine();
