@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   lines.push("> logs complete.");
   lines.push('<a class="inline-link" href="/index.html">run /home</a>');
-  lines.push('<a class="inline-link" href="/about/">run /about</a>');
+  lines.push('<a class="inline-link" href="/about/about.html">run /about</a>');
   let i = 0;
 
   function typeLine() {
