@@ -10,26 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
     return result;
   }
 
-const realEntries = [
-  {
-    date: "28-08-2025",
-    label: 'Reform UK and Women: A False Promise of Protection',
-    summary: "yap, politics",
-    link: "/journal/reform-women.html"
-  },
-  {
-    date: "08-07-2025",
-    label: 'TEST2 – "Terminal goofy ahh"',
-    summary: "robots, AI, coding",
-    link: "/journal/entry-test2.html"
-  },
-  {
-    date: "05-07-2025",
-    label: 'TEST1 – "Late Nights and cofeefe"',
-    summary: "caffeine, introspection, insomnia",
-    link: "/journal/entry-test1.html"
-  }
-];
+  const realEntries = [
+    {
+      date: "28-08-2025",
+      label: 'Reform UK and Women: A False Promise of Protection',
+      summary: "yap, politics",
+      link: "/journal/reform-women.html"
+    },
+    {
+      date: "08-07-2025",
+      label: 'TEST2 – "Terminal goofy ahh"',
+      summary: "robots, AI, coding",
+      link: "/journal/entry-test2.html"
+    },
+    {
+      date: "05-07-2025",
+      label: 'TEST1 – "Late Nights and cofeefe"',
+      summary: "caffeine, introspection, insomnia",
+      link: "/journal/entry-test1.html"
+    }
+  ];
 
   const glitchEntries = [
     {
@@ -75,7 +75,6 @@ const realEntries = [
   const shuffledGlitches = glitchEntries.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 2) + 1);
   const combinedEntries = [...realEntries, ...shuffledGlitches];
 
-  // Sort 
   combinedEntries.sort((a, b) => {
     const [dayA, monthA, yearA] = a.date.split("-").map(Number);
     const [dayB, monthB, yearB] = b.date.split("-").map(Number);
@@ -84,34 +83,40 @@ const realEntries = [
 
   const lines = ["> running /journal...", "> loading personal logs...", ""];
 
-  for (const entry of combinedEntries) {
+  const entryBlocks = combinedEntries.map(entry => {
     const labelOutput = entry.link
       ? `<a href="${entry.link}">${entry.label}</a>`
       : entry.label || "???";
 
-    lines.push(`${entry.date}  [${labelOutput}]`);
+    let block = `${entry.date}  [${labelOutput}]<br/>`;
 
     const summaries = typeof entry.summary === "function"
       ? entry.summary()
       : Array.isArray(entry.summary)
         ? entry.summary
-        : [`> summary: ${entry.summary}`];
+        : [`summary: ${entry.summary}`];
 
-    lines.push(...summaries);
-    lines.push(""); 
-  }
+    for (const s of summaries) {
+      block += `> ${s}<br/>`;
+    }
 
+    return block + "<br/>";
+  });
+
+  lines.push(...entryBlocks);
   lines.push("> logs complete.");
   lines.push('<a class="inline-link" href="/index.html">run /home</a>');
   lines.push('<a class="inline-link" href="/about/about.html">run /about</a>');
+
   let i = 0;
 
-  function typeLine() {
+  function typeChunk() {
     if (i < lines.length) {
       terminal.innerHTML += lines[i] + "<br/>";
       i++;
-      setTimeout(typeLine, 250);    }
+      setTimeout(typeChunk, 700); 
+    }
   }
 
-  typeLine();
+  typeChunk();
 });
