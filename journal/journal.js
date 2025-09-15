@@ -12,22 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const realEntries = [
     {
-      date: "10-07-2025",
-      label: 'TEST3 – "No Thoughts"',
-      summary: "introspection",
-      link: "/journal/entry-test3.html"
-    },
-    {
       date: "08-07-2025",
-      label: 'TEST2 – "Why Terminal Vibes Hit Different"',
+      label: 'TEST2 – "Terminal goofy ahh"',
       summary: "robots, AI, coding",
       link: "/journal/entry-test2.html"
     },
     {
       date: "05-07-2025",
-      label: 'TEST1 – "Late Nights and Coffee"',
+      label: 'TEST1 – "Late Nights and cofeefe"',
       summary: "caffeine, introspection, insomnia",
       link: "/journal/entry-test1.html"
+    }
+    {
+      date: "28-08-2025",
+      title: 'Reform UK and Women: A False Promise of Protection',
+      summary: "yap, politics",
+      link: "reform-women.html"
     }
   ];
 
