@@ -10,23 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
     return result;
   }
 
- const realEntries = [
+const realEntries = [
   {
     date: "28-08-2025",
     label: 'Reform UK and Women: A False Promise of Protection',
-    summary: "> summary: yap, politics",
+    summary: "yap, politics",
     link: "/journal/reform-women.html"
   },
   {
     date: "08-07-2025",
     label: 'TEST2 – "Terminal goofy ahh"',
-    summary: "> summary: robots, AI, coding",
+    summary: "robots, AI, coding",
     link: "/journal/entry-test2.html"
   },
   {
     date: "05-07-2025",
     label: 'TEST1 – "Late Nights and cofeefe"',
-    summary: "> summary: caffeine, introspection, insomnia",
+    summary: "caffeine, introspection, insomnia",
     link: "/journal/entry-test1.html"
   }
 ];
