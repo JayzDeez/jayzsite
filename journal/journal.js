@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: 'Reform UK and Women: A False Promise of Protection',
       summary: "yap, politics",
       link: "reform-women.html"
-    }
+    },
   ];
 
   const glitchEntries = [
