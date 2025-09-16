@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       catEgg.innerHTML = `
         > warning: system stability compromised<br/>
         > meow meow meow...<br/><br/>
-        <img src="cat.png" alt="Secret Cat" class="cat-pic"/><br/><br/>
+        <img src="img/cat.png" alt="Secret Cat" class="cat-pic"/><br/><br/>
         > how did you get here?
       `;
     }
