@@ -37,3 +37,15 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.hidden-egg {
+  display: none;
+  margin-top: 200vh; 
+  text-align: center;
+}
+
+.cat-pic {
+  max-width: 300px;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
