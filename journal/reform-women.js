@@ -6,11 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
       "> running /journal/reform-women...",
       "> loading foreword...",
       "",
-      "foreword: I’m becoming too familiar with watching the sun rise, only to crash into sleep halfway through the day. My brain won’t switch off rather it loops fears, thoughts, and occasional nonsense that doesn’t deserve this much attention.",
+      "> foreword: I’m becoming too familiar with watching the sun rise, only to crash into sleep halfway through the day. My brain won’t switch off rather it loops fears, thoughts, and occasional nonsense that doesn’t deserve this much attention.",
       "This site is my remedy for restless nights: a place to set it all down, with the faint hope that someone out there might see something differently after reading.",
       "",
-      "Reform UK and Women: A False Promise of Protection",
-      "Content Warning: sexual violence, domestic violence",
+      "> Reform UK and Women: A False Promise of Protection",
+      "",
+      "content warning: sexual violence, domestic violence",
       ""
     ],
     [
