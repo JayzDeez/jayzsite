@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "",
       "> Reform UK and Women: A False Promise of Protection",
       "",
-      "content warning: sexual violence, domestic violence",
+      "<b>content warning: sexual violence, domestic violence</b>",
       ""
     ],
     [
-      "Right-wing messaging constantly coats itself with the claim that it is in “defence of women and children.” But for Reform UK and Nigel Farage, it is clear that this is only used as a weapon to villainise, other and create rising tensions within society.",
+      "Right-wing messaging constantly coats itself with the claim that it is in <i>“defence of women and children.”</i> But for Reform UK and Nigel Farage, it is clear that this is only used as a weapon to villainise, other and create rising tensions within society.",
       "",
       "On abortion, Nigel Farage has called the UK’s 24-week abortion limit “utterly ludicrous,” not a neutral comment, but a statement signalling rollback. Then, when the House voted to decriminalise abortion and stop prosecuting women for ending their own pregnancies, all Reform MPs voted against it, with Farage abstaining. A woman’s right to choose is not to be debated and sets a dangerous precedent if Reform is to do well in the next general election.",
       '<a href="https://news.sky.com/story/nigel-farage-says-it-is-utterly-ludicrous-to-allow-abortion-up-to-24-weeks-13375431" target="_blank">[source]</a>',
