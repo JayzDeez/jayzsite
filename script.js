@@ -123,4 +123,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   showBootLines();
+
+
+});
+// MEOW MEOW
+document.addEventListener("DOMContentLoaded", () => {
+  const catEgg = document.getElementById("egg-cat");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1200 && catEgg.style.display === "none") {
+      catEgg.style.display = "block";
+      catEgg.innerHTML = `
+        > warning: system stability compromised<br/>
+        > meow meow meow...<br/><br/>
+        <img src="cat.png" alt="Secret Cat" class="cat-pic"/><br/><br/>
+        > how did you get here?
+      `;
+    }
+  });
 });
