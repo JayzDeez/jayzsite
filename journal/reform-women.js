@@ -4,11 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const blocks = [
     [
       "> running /journal/reform-women...",
+    ],
+    [
       "> loading foreword...",
+    ],
+    [
       "",
       "> foreword: I’m becoming too familiar with watching the sun rise, only to crash into sleep halfway through the day. My brain won’t switch off rather it loops fears, thoughts, and occasional nonsense that doesn’t deserve this much attention.",
       "This site is my remedy for restless nights: a place to set it all down, with the faint hope that someone out there might see something differently after reading.",
       "",
+    ],
+    [
       "> Reform UK and Women: A False Promise of Protection",
       "",
       "<b>content warning: sexual violence, domestic violence</b>",
@@ -31,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       " • 36% were acquaintances",
       " • 22% were current or ex-intimate partners",
       " • 19% were other family members",
+    ],
+    [
       "",
       "Looking just at rape:",
       " • 8% committed by strangers",
@@ -48,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "",
       "The issues are far deeper than just policy and rhetoric. At its core, Reform elevates dangerous, racist and misogynistic candidates. This is beyond an issue of manifesto and policy, but an issue with the very company they keep and the voices they amplify.",
       "",
+    ],
+    [
       "Nigel Farage himself set a worrying tone in June 2024 when he described Andrew Tate as an “important voice” for young men “feeling they aren’t allowed to be blokes,” even as Tate faced charges including rape and human trafficking. Farage refused to retract the comment, framing it as a gap in representation that Tate filled, a worrying validation of toxic masculinity from the party’s leader. He has since gone on to say he is not a Tate supporter, but notably has not apologised and has even doubled down on the points he made surrounding Tate.",
       '<a href="https://www.standard.co.uk/news/politics/nigel-farage-andrew-tate-clactononsea-the-guardian-romania-b1166076.html" target="_blank">[source]</a>',
       "",
@@ -57,14 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
       "Then there was a campaign stunt in Hertfordshire during the 2025 local elections, where Reform activists likened senior female Cabinet ministers to cows awaiting slaughter. It was dehumanising, misogynistic, and politically tone-deaf. Instead of condemning it outright, Farage brushed it off as a “lapse in taste,” claiming the party’s vetting process was adequate despite the glaring evidence to the contrary.",
       '<a href="https://paywallbuster.com/articles/?article=https%3A%2F%2Fwww.thetimes.com%2Fuk%2Fpolitics%2Farticle%2Freform-councils-uk-rhnb95t7t" target="_blank">[source]</a>',
       "",
+    ],
+    [
       "And from inside the ranks came another red flag: Georgie David, Reform’s candidate for West Ham & Beckton, quit the party in July 2024, stating she could not “be directly associated” with a group where “the vast majority of candidates are indeed racist, misogynistic and bigoted.” Faced with a leadership unwilling to address these issues, she chose to walk away.",
       '<a href="https://www.theguardian.com/politics/article/2024/jul/02/second-reform-candidate-quits-over-racism-and-misogyny" target="_blank">[source]</a>',
       "",
       "These examples expose a deeper pattern of consistent tolerance, even promotion, of misogyny, violence, and prejudice within Reform UK’s network."
-    ],
-    [
       "",
       "⸻",
+    ],
+    [
       "",
       "TL;DR",
       "If Reform UK and Nigel Farage actually cared for women and children, they would invest in maternity protections, robust sex and consent education, mental health support, and poverty reduction. They would recognise that around nine in ten cases of sexual violence are committed by someone the victim already knows, and act on the cultural roots of toxic masculinity instead of scapegoating minorities.",
@@ -73,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "",
       "If safety were truly the goal, Reform would be protecting freedoms rather than threatening them.",
       "",
+    ],
+    [
       "> logs complete.",
       '<a class="inline-link" href="/index.html">run /home</a>',
       '<a class="inline-link" href="/journal/journal.html">run /journal</a>',
