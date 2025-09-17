@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (blockIndex < blocks.length) {
       terminal.innerHTML += blocks[blockIndex].join("<br/>") + "<br/><br/>";
       blockIndex++;
-      setTimeout(typeBlock, 1200);
+      setTimeout(typeBlock, 800);
     }
   }
 
