@@ -127,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 // MEOW MEOW
-// --- Cat Easter egg trigger ---
 let clickCount = 0;
 const terminalArea = document.querySelector(".terminal"); 
 
