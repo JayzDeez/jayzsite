@@ -127,18 +127,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 // MEOW MEOW
-document.addEventListener("DOMContentLoaded", () => {
-  const catEgg = document.getElementById("egg-cat");
+// --- Cat Easter egg trigger ---
+let clickCount = 0;
+const terminalArea = document.querySelector(".terminal"); 
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 1200 && catEgg.style.display === "none") {
-      catEgg.style.display = "block";
-      catEgg.innerHTML = `
-        > warning: system stability compromised<br/>
-        > meow meow meow...<br/><br/>
-        <img src="img/cat.png" alt="Secret Cat" class="cat-pic"/><br/><br/>
-        > how did you get here?
-      `;
-    }
-  });
+terminalArea.addEventListener("click", () => {
+  clickCount++;
+  if (clickCount === 5) {
+    const egg = document.getElementById("egg-cat");
+    egg.innerHTML = `
+      <img src="/images/cat.jpg" alt="Secret cat" style="max-width:200px;">
+      <p>> how did you get here?</p>
+    `;
+    egg.style.display = "block";
+  }
 });
