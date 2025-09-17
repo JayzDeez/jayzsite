@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       date: "08-07-2025",
       label: 'TEST2 – "Terminal goofy ahh"',
-      summary: "robots, AI, coding",
+      summary: "grok",
       link: "/journal/entry-test2.html"
     },
     {
       date: "05-07-2025",
       label: 'TEST1 – "Late Nights and cofeefe"',
-      summary: "caffeine, introspection, insomnia",
+      summary: "caffeine, insomnia",
       link: "/journal/entry-test1.html"
     }
   ];
