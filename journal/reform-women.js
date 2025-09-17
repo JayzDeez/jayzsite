@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     [
       "",
-      "> foreword: I’m becoming too familiar with watching the sun rise, only to crash into sleep halfway through the day. My brain won’t switch off rather it loops fears, thoughts, and occasional...",
+      "> foreword: I’m becoming too familiar with watching the sun rise, only to crash into sleep halfway through the day. My brain won’t switch off rather it loops fears, thoughts, and occasional nonsense that doesn’t deserve this much attention.",
       "This site is my remedy for restless nights: a place to set it all down, with the faint hope that someone out there might see something differently after reading.",
       "",
     ],
