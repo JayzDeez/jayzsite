@@ -136,7 +136,7 @@ terminalArea.addEventListener("click", () => {
   if (clickCount === 5) {
     const egg = document.getElementById("egg-cat");
     egg.innerHTML = `
-      <img src="/img/cat.jpg" alt="Secret cat" style="max-width:400px;">
+      <img src="/img/cat.png" alt="Secret cat" style="max-width:400px;">
       <p>> how did you find this?</p>
     `;
     egg.style.display = "block";
