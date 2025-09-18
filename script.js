@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "> status: stable",
     ...(browser ? [`> browser: ${browser}`] : []),
     `> operating system: ${os}`,
-    "> last updated: 07-09-2025",
+    "> last updated: 18-09-2025",
     "> welcome, guest user"
   ];
 
