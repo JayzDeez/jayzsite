@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
   "consider touching grass, or don’t",
   "ran out of ideas. looping old ones.",
   "I saw corps strip farmers of water ... and eventually of land.",
+  "you should try clicking around these pages :D",
+  "what could be hiding on this page?",
   "It's never lupus"
 ];
 
