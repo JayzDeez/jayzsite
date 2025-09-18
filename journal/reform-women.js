@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "",
       "Instead, they offer abortion rollbacks, plans to deport women and children to Taliban-controlled Afghanistan, tolerance of candidates with histories of misogyny and violence,  and endless flag-waving distractions. Farage’s praise of Andrew Tate, James McMurdock’s domestic abuse conviction, and repeated Reform campaign controversies only highlight how deeply this problem runs.",
       "",
-      "If safety were truly the goal, <b>Reform would be protecting freedoms rather than threatening them."</b>,
+      "If safety were truly the goal, <b>Reform would be protecting freedoms rather than threatening them.</b>",
       "",
     ],
     [
