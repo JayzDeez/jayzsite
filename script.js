@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "> status: stable",
     ...(browser ? [`> browser: ${browser}`] : []),
     `> operating system: ${os}`,
+    "> site visits: [loading...]",
     "> last updated: 18-09-2025",
     "> welcome, guest user"
   ];
@@ -87,16 +88,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const terminal = document.getElementById("terminal");
   let i = 0;
 
-  function showBootLines() {
-    if (i < bootLines.length) {
-      terminal.innerHTML += bootLines[i] + "<br/>";
-      i++;
-      setTimeout(showBootLines, 500);
-    } else {
-      terminal.innerHTML += "<br/>";
-      setTimeout(showQuote, 500);
-    }
-  }
+ if (i < bootLines.length) {
+  terminal.innerHTML += bootLines[i] + "<br/>";
+  i++;
+  setTimeout(showBootLines, 500);
+} else {
+  fetch("https://api.countapi.xyz/hit/jayzsite/homepage")
+    .then(res => res.json())
+    .then(res => {
+      terminal.innerHTML = terminal.innerHTML.replace("[loading...]", res.value);
+    });
+
+  terminal.innerHTML += "<br/>";
+  setTimeout(showQuote, 500);
+}
 
   function showQuote() {
     const shuffled = quotes.sort(() => 0.5 - Math.random());
