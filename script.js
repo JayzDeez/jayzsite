@@ -94,20 +94,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (currentLine.includes("> site visits: [loading...]")) {
         terminal.innerHTML += currentLine + "<br/>";
-        fetch("https://api.countapi.xyz/hit/jayzsite/homepage")
-          .then(res => res.json())
-          .then(obj => {
-            terminal.innerHTML = terminal.innerHTML.replace(
-              "> site visits: [loading...]",
-              `> site visits: ${obj.value}`
-            );
-          })
-          .catch(() => {
-            terminal.innerHTML = terminal.innerHTML.replace(
-              "> site visits: [loading...]",
-              "> site visits: [error]"
-            );
-          });
+fetch("https://counterapi.dev/api/jayzsite/homepage")
+  .then(res => res.json())
+  .then(obj => {
+    terminal.innerHTML = terminal.innerHTML.replace(
+      "> site visits: [loading...]",
+      `> site visits: ${obj.count}`
+    );
+  })
+  .catch(() => {
+    terminal.innerHTML = terminal.innerHTML.replace(
+      "> site visits: [loading...]",
+      "> site visits: [offline]"
+    );
+  });
       } else {
         terminal.innerHTML += currentLine + "<br/>";
       }
