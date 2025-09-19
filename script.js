@@ -84,17 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
     `<a class="inline-link" href="about/about.html">run /about</a>`
   ];
 
- const terminal = document.getElementById("terminal");
+  const terminal = document.getElementById("terminal");
   let i = 0;
 
   function showBootLines() {
     if (i < bootLines.length) {
       const currentLine = bootLines[i];
-      
-      } else {
-        terminal.innerHTML += currentLine + "<br/>";
-      }
-
+      terminal.innerHTML += currentLine + "<br/>";
       i++;
       setTimeout(showBootLines, 500);
     } else {
@@ -132,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showBootLines();
 });
 
-// MEOW MEOW 
+// MEOW MEOW
 let clickCount = 0;
 const terminalArea = document.querySelector(".terminal");
 
