@@ -90,25 +90,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showBootLines() {
     if (i < bootLines.length) {
-      terminal.innerHTML += bootLines[i] + "<br/>";
+      const currentLine = bootLines[i];
+
+      // Handle the visits line with live update
+      if (currentLine.includes("> site visits: [loading...]")) {
+        terminal.innerHTML += currentLine + "<br/>";
+        fetch("https://api.countapi.xyz/hit/jayzsite/homepage")
+          .then(res => res.json())
+          .then(res => {
+            terminal.innerHTML = terminal.innerHTML.replace(
+              "> site visits: [loading...]",
+              `> site visits: ${res.value}`
+            );
+          })
+          .catch(() => {
+            terminal.innerHTML = terminal.innerHTML.replace(
+              "> site visits: [loading...]",
+              "> site visits: [error]"
+            );
+          });
+      } else {
+        terminal.innerHTML += currentLine + "<br/>";
+      }
+
       i++;
       setTimeout(showBootLines, 500);
     } else {
-      // update site visits
-    fetch("https://api.countapi.xyz/hit/jayzsite/homepage")
-  .then(res => res.json())
-  .then(res => {
-    terminal.innerHTML = terminal.innerHTML.replace(
-      "> site visits: [loading...]",
-      `> site visits: ${res.value}`
-    );
-  })
-  .catch(() => {
-    terminal.innerHTML = terminal.innerHTML.replace(
-      "> site visits: [loading...]",
-      "> site visits: [error]"
-    );
-  });
       terminal.innerHTML += "<br/>";
       setTimeout(showQuote, 500);
     }
@@ -143,9 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
   showBootLines();
 });
 
-// MEOW MEOW easter egg
+// MEOW MEOW 
 let clickCount = 0;
-const terminalArea = document.querySelector(".terminal"); 
+const terminalArea = document.querySelector(".terminal");
 
 terminalArea.addEventListener("click", () => {
   clickCount++;
