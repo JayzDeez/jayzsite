@@ -85,22 +85,21 @@ document.addEventListener("DOMContentLoaded", () => {
     `<a class="inline-link" href="about/about.html">run /about</a>`
   ];
 
-  const terminal = document.getElementById("terminal");
+ const terminal = document.getElementById("terminal");
   let i = 0;
 
   function showBootLines() {
     if (i < bootLines.length) {
       const currentLine = bootLines[i];
 
-      // Handle the visits line with live update
       if (currentLine.includes("> site visits: [loading...]")) {
         terminal.innerHTML += currentLine + "<br/>";
         fetch("https://api.countapi.xyz/hit/jayzsite/homepage")
           .then(res => res.json())
-          .then(res => {
+          .then(obj => {
             terminal.innerHTML = terminal.innerHTML.replace(
               "> site visits: [loading...]",
-              `> site visits: ${res.value}`
+              `> site visits: ${obj.value}`
             );
           })
           .catch(() => {
