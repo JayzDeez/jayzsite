@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "> status: stable",
     ...(browser ? [`> browser: ${browser}`] : []),
     `> operating system: ${os}`,
-    "> site visits: [loading...]",
     "> last updated: 18-09-2025",
     "> welcome, guest user"
   ];
@@ -91,23 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showBootLines() {
     if (i < bootLines.length) {
       const currentLine = bootLines[i];
-
-      if (currentLine.includes("> site visits: [loading...]")) {
-        terminal.innerHTML += currentLine + "<br/>";
-fetch("https://counterapi.dev/api/jayzsite/homepage/incr")
-  .then(r => r.json())
-  .then(data => {
-    terminal.innerHTML = terminal.innerHTML.replace(
-      "> site visits: [loading...]",
-      `> site visits: ${data.count}`
-    );
-  })
-  .catch(() => {
-    terminal.innerHTML = terminal.innerHTML.replace(
-      "> site visits: [loading...]",
-      "> site visits: [error]"
-    );
-  });
+      
       } else {
         terminal.innerHTML += currentLine + "<br/>";
       }
