@@ -95,12 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(showBootLines, 500);
     } else {
       // update site visits
-      fetch("https://api.countapi.xyz/hit/jayzsite/homepage")
-        .then(res => res.json())
-        .then(res => {
-          terminal.innerHTML = terminal.innerHTML.replace("[loading...]", res.value);
-        });
-
+    fetch("https://api.countapi.xyz/hit/jayzsite/homepage")
+  .then(res => res.json())
+  .then(res => {
+    terminal.innerHTML = terminal.innerHTML.replace(
+      "> site visits: [loading...]",
+      `> site visits: ${res.value}`
+    );
+  })
+  .catch(() => {
+    terminal.innerHTML = terminal.innerHTML.replace(
+      "> site visits: [loading...]",
+      "> site visits: [error]"
+    );
+  });
       terminal.innerHTML += "<br/>";
       setTimeout(showQuote, 500);
     }
